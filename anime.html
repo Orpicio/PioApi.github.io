@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
+        rel="stylesheet"
+    />
+    <title>API - Animes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .header form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header .btn {
+            font-size: 0.9rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        .pagination {
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con Título, Barra de Búsqueda y Botón de Volver-->
+    <div class="header">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <h1>Pag de Animes By Andres</h1>
+            <form id="searchForm" onsubmit="searchAnime(event)" class="d-flex">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar anime por nombre..." />
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+            <button class="btn btn-secondary" onclick="window.location.href='index.html'">Volver</button>
+        </div>
+    </div>
+
+    <!-- Contenedor de Datos -->
+    <div class="container">
+        <div id="dataAlbum" class="row row-cols-1 row-cols-md-5 g-4">
+            <!-- Aquí se mostrarán las tarjetas de anime -->
+        </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="container mt-4">
+        <nav>
+            <ul id="pagination" class="pagination"></ul>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+    ></script>
+    <script src="./js/animesApi.js"></script>
+</body>
+</html>
